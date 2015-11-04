@@ -53,6 +53,26 @@ Released under the MIT license: https://raw.githubusercontent.com/williesmithche
   <!--jQuery-->
   <script src="//code.jquery.com/jquery-1.11.3.js"></script>
 
+  <meta property="fb:app_id" content="442137115889177" />
+
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '442137115889177',
+        xfbml      : true,
+        version    : 'v2.5'
+      });
+    };
+
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
   <!--CSS-->
   <style>
       html, body{
@@ -80,6 +100,13 @@ Released under the MIT license: https://raw.githubusercontent.com/williesmithche
       }
       a{
         display:block;
+      }
+      main {
+        max-width: 960px;
+        amrgin:0 auto;
+      }
+      .fb-like {
+        float: right;
       }
       ul, ol {
         display: inline-block;
@@ -111,111 +138,121 @@ Released under the MIT license: https://raw.githubusercontent.com/williesmithche
 
 </head>
 <body>
-<h1>LINE Button Test</h1>
-<h2>a[href]</h2>
-<ol>
-  <li>
-    <a id="test-1" href="http://line.naver.jp/R/msg/text/?%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A6"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
-    <span>純文字測試</span>
-  </li>
-  <li>
-    <a id="test-2" href="http://line.me/R/msg/text/?%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A62"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
-    <span>純文字測試</span>
-  </li>
-  <li>
-    <a id="test-3" href="line://msg/text/%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A63"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
-    <span>純文字測試</span>
-  </li>
-  <li>
-    <a id="test-4" href="http://line.naver.jp/R/msg/text/?%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A64%0Ahttp%3A%2F%2Fwilliesmithchen.github.io%2FLINE_Btn_Test%2F"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
-    <span>文字+URL測試</span>
-  </li>
-  <li>
-    <a id="test-5" href="http://line.me/R/msg/text/?%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A65%0Ahttp%3A%2F%2Fwilliesmithchen.github.io%2FLINE_Btn_Test%2F"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
-    <span>文字+URL測試</span>
-  </li>
-  <li>
-    <a id="test-6" href="line://msg/text/%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A66%0Ahttp%3A%2F%2Fwilliesmithchen.github.io%2FLINE_Btn_Test%2F"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
-    <span>文字+URL測試</span>
-  </li>
-</ol>
-<hr/>
-<h2>window.open</h2>
-<ol>
-  <li>
-    <a id="test-7" href="javascript:void(0);" onclick="sharebuttonPopup('http://line.naver.jp/R/msg/text/?%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A67');return false;"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
-    <span>純文字測試</span>
-  </li>
-  <li>
-    <a id="test-8" href="javascript:void(0);" onclick="sharebuttonPopup('http://line.me/R/msg/text/?%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A68');return false;"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
-    <span>純文字測試</span>
-  </li>
-  <li>
-    <a id="test-9" href="javascript:void(0);" onclick="sharebuttonPopup('line://msg/text/%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A69');return false;"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
-    <span>純文字測試</span>
-  </li>
-  <li>
-    <a id="test-10" href="javascript:void(0);" onclick="sharebuttonPopup('http://line.naver.jp/R/msg/text/?%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A610%0Ahttp%3A%2F%2Fwilliesmithchen.github.io%2FLINE_Btn_Test%2F');return false;"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
-    <span>文字+URL測試</span>
-  </li>
-  <li>
-    <a id="test-11" href="javascript:void(0);" onclick="sharebuttonPopup('http://line.me/R/msg/text/?%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A611%0Ahttp%3A%2F%2Fwilliesmithchen.github.io%2FLINE_Btn_Test%2F');return false;"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
-    <span>文字+URL測試</span>
-  </li>
-  <li>
-    <a id="test-12" href="javascript:void(0);" onclick="sharebuttonPopup('line://msg/text/%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A612%0Ahttp%3A%2F%2Fwilliesmithchen.github.io%2FLINE_Btn_Test%2F');return false;"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
-    <span>文字+URL測試</span>
-  </li>
-</ol>
-<hr/>
-<h2>官方Script</h2>
-<ol>
-  <li>
-    <span>
-      <!--Line Script-->
-      <script type="text/javascript" src="//media.line.me/js/line-button.js?v=20140411"></script>
-      <script type="text/javascript">
-      (function(media_line_me){
-        var randomtype = ['a','b','c','d','e'];
-        var type = randomtype[Math.floor(Math.random()*randomtype.length)];
-        try {
-          console.log("Start render LINE Button Type: " + type);
-          new media_line_me.LineButton({"pc":false,"lang":"zh-hant","type": "" + type + "" });
-        } catch(e) {
-          console.error("Can't find media_line_me type: " + type);
-        }
-      })(window.media_line_me);
-      </script>
-    </span>
-  </li>
-</ol>
 
-<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
-<input type="hidden" name="cmd" value="_s-xclick">
-<table>
-<tr><td><input type="hidden" name="on0" value="Donate Type">Donate WSC : </td></tr><tr><td><select name="os0">
-    <option value="Little Donate">Little Donate $1.00 USD</option>
-    <option value="Small Donate">Small Donate $10.00 USD</option>
-    <option value="Normal Donate">Normal Donate $100.00 USD</option>
-    <option value="Help Donate">Help Donate $1,000.00 USD</option>
-</select> </td></tr>
-</table>
-<input type="hidden" name="currency_code" value="USD">
-<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
-">
-<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal － 更安全、更簡單的線上付款方式！">
-<img alt="" border="0" src="https://www.paypalobjects.com/zh_TW/i/scr/pixel.gif" width="1" height="1">
-</form>
+  <header>
+    <h1>
+      <span>LINE Button Test</span>
+      <div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+    </h1>
+  </header>
 
-<script>
-"use strict";var sharebuttonPopup = function sharebuttonPopup(url,w,h) {
-  window.open( url, "sharePopup", "status = 1, height = "+(h || 560)+", width = "+(w || 480)+", top="+(window.screen.height/2)-((h || 560)/2)+", left="+(window.screen.width/2)-((w || 480)/2)+", resizable = 0" );
-};
-</script>
-<!--GA-->
-<script>(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b;a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)};a[b].l=1*new Date;c=e.createElement(f);d=e.getElementsByTagName(f)[0];c.async=1;c.src=g;d.parentNode.insertBefore(c,d)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");</script>
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TNZLF9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TNZLF9');</script>
-<!-- End Google Tag Manager -->
+  <main>
+    <h2>a[href]</h2>
+    <ol>
+      <li>
+        <a id="test-1" href="http://line.naver.jp/R/msg/text/?%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A6"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
+        <span>純文字測試</span>
+      </li>
+      <li>
+        <a id="test-2" href="http://line.me/R/msg/text/?%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A62"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
+        <span>純文字測試</span>
+      </li>
+      <li>
+        <a id="test-3" href="line://msg/text/%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A63"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
+        <span>純文字測試</span>
+      </li>
+      <li>
+        <a id="test-4" href="http://line.naver.jp/R/msg/text/?%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A64%0Ahttp%3A%2F%2Fwilliesmithchen.github.io%2FLINE_Btn_Test%2F"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
+        <span>文字+URL測試</span>
+      </li>
+      <li>
+        <a id="test-5" href="http://line.me/R/msg/text/?%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A65%0Ahttp%3A%2F%2Fwilliesmithchen.github.io%2FLINE_Btn_Test%2F"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
+        <span>文字+URL測試</span>
+      </li>
+      <li>
+        <a id="test-6" href="line://msg/text/%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A66%0Ahttp%3A%2F%2Fwilliesmithchen.github.io%2FLINE_Btn_Test%2F"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
+        <span>文字+URL測試</span>
+      </li>
+    </ol>
+    <hr/>
+    <h2>window.open</h2>
+    <ol>
+      <li>
+        <a id="test-7" href="javascript:void(0);" onclick="sharebuttonPopup('http://line.naver.jp/R/msg/text/?%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A67');return false;"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
+        <span>純文字測試</span>
+      </li>
+      <li>
+        <a id="test-8" href="javascript:void(0);" onclick="sharebuttonPopup('http://line.me/R/msg/text/?%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A68');return false;"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
+        <span>純文字測試</span>
+      </li>
+      <li>
+        <a id="test-9" href="javascript:void(0);" onclick="sharebuttonPopup('line://msg/text/%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A69');return false;"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
+        <span>純文字測試</span>
+      </li>
+      <li>
+        <a id="test-10" href="javascript:void(0);" onclick="sharebuttonPopup('http://line.naver.jp/R/msg/text/?%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A610%0Ahttp%3A%2F%2Fwilliesmithchen.github.io%2FLINE_Btn_Test%2F');return false;"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
+        <span>文字+URL測試</span>
+      </li>
+      <li>
+        <a id="test-11" href="javascript:void(0);" onclick="sharebuttonPopup('http://line.me/R/msg/text/?%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A611%0Ahttp%3A%2F%2Fwilliesmithchen.github.io%2FLINE_Btn_Test%2F');return false;"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
+        <span>文字+URL測試</span>
+      </li>
+      <li>
+        <a id="test-12" href="javascript:void(0);" onclick="sharebuttonPopup('line://msg/text/%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A612%0Ahttp%3A%2F%2Fwilliesmithchen.github.io%2FLINE_Btn_Test%2F');return false;"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
+        <span>文字+URL測試</span>
+      </li>
+    </ol>
+    <hr/>
+    <h2>官方Script</h2>
+    <ol>
+      <li>
+        <span>
+          <!--Line Script-->
+          <script type="text/javascript" src="//media.line.me/js/line-button.js?v=20140411"></script>
+          <script type="text/javascript">
+          (function(media_line_me){
+            var randomtype = ['a','b','c','d','e'];
+            var type = randomtype[Math.floor(Math.random()*randomtype.length)];
+            try {
+              console.log("Start render LINE Button Type: " + type);
+              new media_line_me.LineButton({"pc":false,"lang":"zh-hant","type": "" + type + "" });
+            } catch(e) {
+              console.error("Can't find media_line_me type: " + type);
+            }
+          })(window.media_line_me);
+          </script>
+        </span>
+      </li>
+    </ol>
+
+    <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
+    <input type="hidden" name="cmd" value="_s-xclick">
+    <table>
+    <tr><td><input type="hidden" name="on0" value="Donate Type">Donate WSC : </td></tr><tr><td><select name="os0">
+        <option value="Little Donate">Little Donate $1.00 USD</option>
+        <option value="Small Donate">Small Donate $10.00 USD</option>
+        <option value="Normal Donate">Normal Donate $100.00 USD</option>
+        <option value="Help Donate">Help Donate $1,000.00 USD</option>
+    </select> </td></tr>
+    </table>
+    <input type="hidden" name="currency_code" value="USD">
+    <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+    ">
+    <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal － 更安全、更簡單的線上付款方式！">
+    <img alt="" border="0" src="https://www.paypalobjects.com/zh_TW/i/scr/pixel.gif" width="1" height="1">
+    </form>
+
+    <script>
+    "use strict";var sharebuttonPopup = function sharebuttonPopup(url,w,h) {
+      window.open( url, "sharePopup", "status = 1, height = "+(h || 560)+", width = "+(w || 480)+", top="+(window.screen.height/2)-((h || 560)/2)+", left="+(window.screen.width/2)-((w || 480)/2)+", resizable = 0" );
+    };
+    </script>
+    <!--GA-->
+    <script>(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b;a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)};a[b].l=1*new Date;c=e.createElement(f);d=e.getElementsByTagName(f)[0];c.async=1;c.src=g;d.parentNode.insertBefore(c,d)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");</script>
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TNZLF9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-TNZLF9');</script>
+    <!-- End Google Tag Manager -->
+  </main>
+
 </body>
 </html>
