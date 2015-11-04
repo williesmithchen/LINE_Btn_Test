@@ -38,7 +38,6 @@ Released under the MIT license: http://jsbin.mit-license.org
           font-size: 16px;
           line-height:1.5;
       }
-      body{ padding:0.5em; }
       h1,h2,h3,h4,h5,h6 {line-height:2;}
       h1{font-size: 190%; font-weight: bold;}
       h2{font-size: 150%;}
@@ -46,11 +45,41 @@ Released under the MIT license: http://jsbin.mit-license.org
       h4{font-size: 100%;}
       h5{font-size: 87.5%;}
       h6{font-size: 75%;}
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      a{
+        display:block;
+      }
+      ul, ol {
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        list-style: none;
+        width: 100%;
+        float: left;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 1em;
+        padding: 0;
+      }
+      li {
+        width: 33.3333333334%;
+        float: left;
+
+        text-align: center;
+
+        margin-bottom: 0.5em;
+      }
+      li:nth-of-type(3n+1), li:last-of-type {
+        float: right;
+      }
   </style>
 </head>
 <body>
 <h1>LINE Button Test</h1>
-<h2>Tag:a[href]</h2>
+<h2>a[href]</h2>
 <ol>
   <li>
     <a id="test-1" href="http://line.naver.jp/R/msg/text/?%E7%B4%94%E6%96%87%E5%AD%97%E6%B8%AC%E8%A9%A6"><img src="https://media.line.me/img/button/zh-hant/40x40.png" width="96" height="96" alt="用LINE傳送" /></a>
